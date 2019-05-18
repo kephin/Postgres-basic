@@ -209,7 +209,7 @@ ALTER TABLE person ADD CONSTRAINT unique_email_address UNIQUE (email);
 ALTER TABLE person ADD UNIQUE (email); # the constraints name will be defined by postgres
 
 # customized constraints
-ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender ='Female' OR gender='Male');
+ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender='Female' OR gender='Male');
 ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK (gender IN ('Female', 'Male'));
 ```
 
@@ -249,7 +249,7 @@ SELECT person.first_name, person.last_name, car.make, car.model, car.price FROM 
 ### Export query results to csv file
 
 ```sql
-\copy (SELECT * FROM person LEFT JOIN car ON car.id===person.car_id) TO '/Users/kevin/Downloads/result.csv' DELIMITER ',' CSV HEADER;
+\copy (SELECT * FROM person LEFT JOIN car ON car.id=person.car_id) TO '/Users/kevin/Downloads/result.csv' DELIMITER ',' CSV HEADER;
 ```
 
 ### Serial & Sequences
