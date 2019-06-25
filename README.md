@@ -58,7 +58,7 @@ DELETE FROM person WHERE id=10;
 ### Update records
 
 ```sql
-UPDATE FROM person SET email='kevin@ruckus.com', age=32 WHERE id=100;
+UPDATE person SET email='kevin@ruckus.com', age=32 WHERE id=100;
 ```
 
 #### ON CONFLICT
