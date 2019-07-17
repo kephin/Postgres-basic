@@ -23,6 +23,14 @@ psql -d [DATABASE_NAME] # connect to the the database (can ignore -d)
 \q # exit
 ```
 
+### copy a table from remote server
+
+`pg_dump -U <username> -h <host> -t <table> <database> | psql <database>`
+
+```zsh
+pg_dump -U mlisa -h 35.224.208.150 -t metric mlisa | psql mlisa
+```
+
 ### Create and drop database or table
 
 > Primary keys uniquely identify a record in tables.
