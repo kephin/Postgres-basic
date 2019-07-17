@@ -169,6 +169,18 @@ SELECT car_make, car_model, ROUND(AVG(price)) FROM car GROUP BY car_make, car_mo
 SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) >= 5 ORDER BY country_of_birth;
 ```
 
+#### Rank and DENSE_RANK
+
+RANK: Ties are assigned the same rank, with the next rankings skipped. So if you have 3 items at rank 2, the next rank listed would be ranked 5.
+
+DENSE_RANK: The ranks are consecutive. No ranks are skipped if there are ranks with multiple items.
+
+```sql
+SELECT Salary, RANK()
+OVER(ORDER BY Salary DESC)
+FROM Employee;
+```
+
 #### COALESCE: to give default value
 
 ```sql
